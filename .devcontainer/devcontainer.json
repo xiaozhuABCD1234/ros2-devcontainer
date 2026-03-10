@@ -43,4 +43,11 @@
         "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached"
     ],
     "postCreateCommand": "rosdep update && rosdep install --from-paths src --ignore-src -y && sudo chown -R ros2_user:ros2_user /home/ros2_user/ws/",
+    "features": {
+        // 自动配置 Git
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest",
+            "ppa": true
+        }
+    }
 }
